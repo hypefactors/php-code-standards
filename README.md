@@ -1,6 +1,6 @@
 ## PHP Code Standards
 
-This repository provides a base configuration for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer), which we use to verify and enforce a single coding standard for PHP code written on Hypefactors.
+This repository provides a base configuration for [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer), which we use to verify and enforce a single coding standard for PHP code written on Hypefactors.
 
 ## Installation
 
@@ -16,10 +16,13 @@ Now that the package is installed, create a configuration file called `.php_cs` 
 
 ```php
 <?php
+
 // Create a new CS Fixer Finder instance
 $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
-return Hypefactors\CodeStandards\Config::create()->setFinder($finder);
+return (new Hypefactors\CodeStandards\Config())
+    ->setFinder($finder)
+;
 ```
 
 ### Ignoring files and/or directories
@@ -32,6 +35,7 @@ Here's a simple example where we ignore both files and directories:
 
 ```php
 <?php
+
 // Directories to not scan
 $excludeDirs = [
     'vendor/',
@@ -46,13 +50,16 @@ $excludeFiles = [
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__)
     ->exclude($excludeDirs)
-    ->ignoreDotFiles(true)->ignoreVCS(true)
+    ->ignoreDotFiles(true)
+    ->ignoreVCS(true)
     ->filter(function (\SplFileInfo $file) use ($excludeFiles) {
         return ! in_array($file->getRelativePathName(), $excludeFiles);
     })
 ;
 
-return Hypefactors\CodeStandards\Config::create()->setFinder($finder);
+return (new Hypefactors\CodeStandards\Config())
+    ->setFinder($finder)
+;
 ```
 
 ### Enforce coding standards for PHPUnit tests
@@ -61,10 +68,14 @@ If you would like to also enable coding standards on your tests, you can call th
 
 ```php
 <?php
+
 // Create a new CS Fixer Finder instance
 $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
-return Hypefactors\CodeStandards\Config::create()->setFinder($finder)->withPHPUnitRules();
+return (new Hypefactors\CodeStandards\Config())
+    ->setFinder($finder)
+    ->withPHPUnitRules()
+;
 ```
 
 ## Contributing
