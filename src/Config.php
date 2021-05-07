@@ -139,7 +139,7 @@ class Config extends \PhpCsFixer\Config
             'space_before' => 'none',
         ],
         'single_line_throw' => true,
-        'static_lambda' => true,
+        'static_lambda' => false,
         'use_arrow_functions' => false,
         'void_return' => false,
 
