@@ -355,7 +355,7 @@ class Config extends \PhpCsFixer\Config
         /**
          * Strict
          */
-        'declare_strict_types' => true,
+        'declare_strict_types' => false,
         'strict_comparison' => true,
         'strict_param' => true,
 
