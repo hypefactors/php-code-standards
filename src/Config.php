@@ -318,7 +318,7 @@ class Config extends \PhpCsFixer\Config
                 'inheritdoc' => 'inline',
             ],
         ],
-        'phpdoc_to_comment' => true,
+        'phpdoc_to_comment' => false,
         'phpdoc_trim_consecutive_blank_line_separation' => true,
         'phpdoc_trim' => true,
         'phpdoc_types' => [
