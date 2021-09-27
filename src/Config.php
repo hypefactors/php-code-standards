@@ -318,7 +318,7 @@ class Config extends \PhpCsFixer\Config
                 'inheritdoc' => 'inline',
             ],
         ],
-        'phpdoc_to_comment' => false,
+        'phpdoc_to_comment' => true,
         'phpdoc_trim_consecutive_blank_line_separation' => true,
         'phpdoc_trim' => true,
         'phpdoc_types' => [
@@ -424,6 +424,9 @@ class Config extends \PhpCsFixer\Config
         'no_trailing_whitespace' => true,
         'no_whitespace_in_blank_line' => true,
         'single_blank_line_at_eof' => true,
+        'types_spaces' => [
+            'space' => 'single',
+        ],
     ];
 
     /**
