@@ -164,7 +164,6 @@ class Config extends \PhpCsFixer\Config
         /**
          * Language Construct
          */
-        'class_keyword_remove' => false,
         'combine_consecutive_issets' => true,
         'combine_consecutive_unsets' => true,
         'declare_equal_normalize' => [
