@@ -69,6 +69,7 @@ class Config extends \PhpCsFixer\Config
                 'const' => 'one',
                 'method' => 'one',
                 'property' => 'one',
+                'trait_import' => 'one',
             ],
         ],
         'no_blank_lines_after_class_opening' => true,
@@ -415,7 +416,6 @@ class Config extends \PhpCsFixer\Config
                 'switch',
                 'throw',
                 'use',
-                'use_trait',
             ],
         ],
         'no_spaces_around_offset' => [
