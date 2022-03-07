@@ -205,6 +205,14 @@ class Config extends \PhpCsFixer\Config
             'default' => 'align_single_space_minimal',
             'operators' => [
                 '+=' => 'single_space',
+                '=' => 'single_space',
+                '==' => 'single_space',
+                '===' => 'single_space',
+                '&&' => 'single_space',
+                '??' => 'single_space',
+                '+' => 'single_space',
+                '-' => 'single_space',
+                '/' => 'single_space',
             ],
         ],
         'concat_space' => [
