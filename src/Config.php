@@ -69,7 +69,7 @@ class Config extends \PhpCsFixer\Config
                 'const' => 'one',
                 'method' => 'one',
                 'property' => 'one',
-                'trait_import' => 'one',
+                'trait_import' => 'none',
             ],
         ],
         'no_blank_lines_after_class_opening' => true,
