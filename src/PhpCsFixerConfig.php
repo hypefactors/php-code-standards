@@ -1,17 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Hypefactors\CodeStandards;
 
+use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 
-class Config extends \PhpCsFixer\Config
+class PhpCsFixerConfig extends Config
 {
-    /**
-     * The rules to be applied.
-     *
-     * @var array
-     */
-    protected $rules = [
+    protected array $rules = [
         /**
          * General Standards
          */
@@ -436,86 +434,42 @@ class Config extends \PhpCsFixer\Config
         'types_spaces' => [
             'space' => 'single',
         ],
+
+        /**
+         * PHPUnit Rules
+         */
+        'php_unit_construct' => true,
+        'php_unit_dedicate_assert' => true,
+        'php_unit_dedicate_assert_internal_type' => true,
+        'php_unit_expectation' => ['target' => 'newest'],
+        'php_unit_fqcn_annotation' => true,
+        'php_unit_method_casing' => false,
+        'php_unit_namespaced' => ['target' => 'newest'],
+        'php_unit_no_expectation_annotation' => [
+            'target' => 'newest',
+            'use_class_const' => true,
+        ],
+        'php_unit_set_up_tear_down_visibility' => true,
+        'php_unit_strict' => true,
+        'php_unit_test_annotation' => ['style' => 'annotation'],
+        'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
+        'php_unit_test_class_requires_covers' => false,
     ];
 
-    /**
-     * Constructor.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct('hypefactors');
-
-        $this->setRiskyAllowed(true);
     }
 
-    /**
-     * Get rules.
-     *
-     * @return array
-     */
     public function getRules(): array
     {
         return $this->rules;
     }
 
-    /**
-     * Sets the given rules by appending them to the current ones.
-     *
-     * @param array $rules
-     *
-     * @return $this
-     */
     public function setRules(array $rules): ConfigInterface
     {
         $this->rules = array_merge($this->rules, $rules);
 
         return $this;
-    }
-
-    /**
-     * Sets the header comment.
-     *
-     * @param string $header
-     *
-     * @return $this
-     */
-    public function setHeader(string $header): ConfigInterface
-    {
-        $this->setRules([
-            'header_comment' => [
-                'header' => $header,
-            ],
-        ]);
-
-        return $this;
-    }
-
-    /**
-     * If PHPUnit rules are required for the project.
-     *
-     * @return $this
-     */
-    public function withPHPUnitRules(): ConfigInterface
-    {
-        return $this->setRules([
-            'php_unit_construct' => true,
-            'php_unit_dedicate_assert' => true,
-            'php_unit_dedicate_assert_internal_type' => true,
-            'php_unit_expectation' => ['target' => 'newest'],
-            'php_unit_fqcn_annotation' => true,
-            'php_unit_method_casing' => false,
-            'php_unit_namespaced' => ['target' => 'newest'],
-            'php_unit_no_expectation_annotation' => [
-                'target' => 'newest',
-                'use_class_const' => true,
-            ],
-            'php_unit_set_up_tear_down_visibility' => true,
-            'php_unit_strict' => true,
-            'php_unit_test_annotation' => ['style' => 'annotation'],
-            'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
-            'php_unit_test_class_requires_covers' => false,
-        ]);
     }
 }
