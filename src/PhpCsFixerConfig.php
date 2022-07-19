@@ -37,6 +37,17 @@ class PhpCsFixerConfig extends Config
         'whitespace_after_comma_in_array' => true,
 
         /**
+         * Basic
+         */
+        'braces' => [
+            'allow_single_line_anonymous_class_with_empty_body' => false,
+            'allow_single_line_closure' => true,
+            'position_after_anonymous_constructs' => 'same',
+            'position_after_control_structures' => 'same',
+            'position_after_functions_and_oop_constructs' => 'next',
+        ],
+
+        /**
          * Casing
          */
         'constant_case' => true,
