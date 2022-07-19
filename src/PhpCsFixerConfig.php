@@ -206,11 +206,13 @@ class PhpCsFixerConfig extends Config
                 '=' => 'single_space',
                 '==' => 'single_space',
                 '===' => 'single_space',
+                '!==' => 'single_space',
                 '&&' => 'single_space',
                 '??' => 'single_space',
                 '+' => 'single_space',
                 '-' => 'single_space',
                 '/' => 'single_space',
+                '>' => 'single_space',
             ],
         ],
         'concat_space' => [
