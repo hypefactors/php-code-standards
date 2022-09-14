@@ -194,7 +194,7 @@ class PhpCsFixerConfig extends Config
          * List Notation
          */
         'list_syntax' => [
-            'syntax' => 'long',
+            'syntax' => 'short',
         ],
 
         /**
