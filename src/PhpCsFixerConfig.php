@@ -29,7 +29,7 @@ class PhpCsFixerConfig extends Config
             'syntax' => 'short',
         ],
         'no_multiline_whitespace_around_double_arrow' => true,
-        'no_trailing_comma_in_singleline_array' => true,
+        'no_trailing_comma_in_singleline' => true,
         'no_whitespace_before_comma_in_array' => true,
         'normalize_index_brace' => true,
         'trailing_comma_in_multiline' => true,
@@ -113,7 +113,6 @@ class PhpCsFixerConfig extends Config
          */
         'no_alternative_syntax' => true,
         'no_superfluous_elseif' => true,
-        'no_trailing_comma_in_list_call' => true,
         'no_unneeded_control_parentheses' => [
             'statements' => ['break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield'],
         ],
