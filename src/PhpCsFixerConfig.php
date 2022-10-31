@@ -169,6 +169,11 @@ class PhpCsFixerConfig extends Config
         ],
         'single_import_per_statement' => false,
         'single_line_after_imports' => true,
+        'global_namespace_import' => [
+            'import_constants' => true,
+            'import_classes' => true,
+            'import_functions' => true,
+        ],
 
         /**
          * Language Construct
