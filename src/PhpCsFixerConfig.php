@@ -37,17 +37,6 @@ class PhpCsFixerConfig extends Config
         'whitespace_after_comma_in_array' => true,
 
         /**
-         * Basic
-         */
-        'braces' => [
-            'allow_single_line_anonymous_class_with_empty_body' => false,
-            'allow_single_line_closure' => true,
-            'position_after_anonymous_constructs' => 'same',
-            'position_after_control_structures' => 'same',
-            'position_after_functions_and_oop_constructs' => 'next',
-        ],
-
-        /**
          * Casing
          */
         'constant_case' => true,
@@ -191,8 +180,8 @@ class PhpCsFixerConfig extends Config
         'function_to_constant' => false,
         'is_null' => false,
         'no_unset_on_property' => true,
-        'single_space_after_construct' => [
-            'constructs' => ['abstract', 'as', 'attribute', 'break', 'case', 'catch', 'class', 'clone', 'comment', 'const', 'const_import', 'continue', 'do', 'echo', 'else', 'elseif', 'extends', 'final', 'finally', 'for', 'foreach', 'function', 'function_import', 'global', 'goto', 'if', 'implements', 'include', 'include_once', 'instanceof', 'insteadof', 'interface', 'match', 'named_argument', 'new', 'open_tag_with_echo', 'php_doc', 'php_open', 'print', 'private', 'protected', 'public', 'require', 'require_once', 'return', 'static', 'throw', 'trait', 'try', 'use', 'use_lambda', 'use_trait', 'var', 'while', 'yield', 'yield_from'],
+        'single_space_around_construct' => [
+            'constructs_contain_a_single_space' => ['yield_from'],
         ],
 
         /**
@@ -233,6 +222,7 @@ class PhpCsFixerConfig extends Config
         'concat_space' => [
             'spacing' => 'none',
         ],
+        'control_structure_braces' => true,
         'increment_style' => [
             'style' => 'post',
         ],
@@ -421,6 +411,7 @@ class PhpCsFixerConfig extends Config
             ],
         ],
         'compact_nullable_typehint' => true,
+        'declare_parentheses' => false,
         'heredoc_indentation' => [
             'indentation' => 'start_plus_one',
         ],
