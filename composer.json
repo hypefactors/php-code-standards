@@ -1,6 +1,7 @@
 {
     "name": "hypefactors/php-code-standards",
     "description": "PHP CS Fixer configuration for Hypefactors",
+    "type": "composer-plugin",
     "keywords": [
         "php",
         "hypefactors",
@@ -16,8 +17,15 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "friendsofphp/php-cs-fixer": "^3.1"
+        "php": "^8.2",
+        "composer-plugin-api": "^2.1",
+        "nunomaduro/larastan": "^2.6",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-mockery": "^1.1",
+        "symplify/easy-coding-standard": "^11.5"
+    },
+    "require-dev": {
+        "composer/composer": "^2.5"
     },
     "autoload": {
         "psr-4": {
@@ -25,14 +33,16 @@
         }
     },
     "config": {
+        "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
+        "process-timeout": 0,
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
-        }
+            "dev-master": "3.0.x-dev"
+        },
+        "class": "Hypefactors\\CodeStandards\\Plugin"
     },
     "minimum-stability": "stable"
 }

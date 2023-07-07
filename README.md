@@ -1,93 +1,46 @@
-## PHP Code Standards
+# PHP Code Standards
 
-This repository provides a base configuration for [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer), which we use to verify and enforce a single coding standard for PHP code written on Hypefactors.
+This repository contains the coding standards followed by Hypefactors.
 
-## Installation
+It includes configuration for:
+- [Easy Coding Standard](https://github.com/easy-coding-standard/easy-coding-standard) (`ecs`)
+- [PHPStan](https://phpstan.org/) (`phpstan`)
 
-Run the following:
+## Setup
 
-```sh
-composer require --dev hypefactors/php-code-standards
+First install the dependency through Composer by running:
+
+```shell
+composer require hypefactors/php-code-standards --dev
 ```
+
+Once the dependency is installed, run the following:
+
+```shell
+composer hypefactors:setup-code-standards
+```
+
+Next open your `composer.json` file and add the following section:
+
+```json
+"scripts": {
+    "ecs": "./vendor/bin/ecs --fix",
+    "ecs:ci": "./vendor/bin/ecs",
+    "phpstan": "./vendor/bin/phpstan analyse --ansi"
+},
+```
+
+> *Note*: If you already have a `scripts` section on your `composer.json` file, just merge the new scripts with the existing ones.
 
 ## Usage
 
-Now that the package is installed, create a configuration file called `.php_cs` or `.php_cs.php` at the root of your project with the following contents:
+To use it, you can run one of the scripts added to your `composer.json` file:
 
-```php
-<?php
-
-// Create a new CS Fixer Finder instance
-$finder = PhpCsFixer\Finder::create()->in(__DIR__);
-
-return (new Hypefactors\CodeStandards\Config())
-    ->setFinder($finder)
-;
+```shell
+composer ecs
+composer ecs:fix
+composer phpstan
 ```
-
-### Ignoring files and/or directories
-
-There will be certain situations where you might want to ignore certain files or directories to not be linted.
-
-Luckily, this is quite easy to achieve and all you need to do is to perform some calls on the CS Fixer Finder instance :)
-
-Here's a simple example where we ignore both files and directories:
-
-```php
-<?php
-
-// Directories to not scan
-$excludeDirs = [
-    'vendor/',
-];
-
-// Files to not scan
-$excludeFiles = [
-    'config/app.php',
-];
-
-// Create a new CS Fixer Finder instance
-$finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__)
-    ->exclude($excludeDirs)
-    ->ignoreDotFiles(true)
-    ->ignoreVCS(true)
-    ->filter(function (\SplFileInfo $file) use ($excludeFiles) {
-        return ! in_array($file->getRelativePathName(), $excludeFiles);
-    })
-;
-
-return (new Hypefactors\CodeStandards\Config())
-    ->setFinder($finder)
-;
-```
-
-### Enforce coding standards for PHPUnit tests
-
-If you would like to also enable coding standards on your tests, you can call the `withPHPUnitRules()` method on the `Config` class, like so:
-
-```php
-<?php
-
-// Create a new CS Fixer Finder instance
-$finder = PhpCsFixer\Finder::create()->in(__DIR__);
-
-return (new Hypefactors\CodeStandards\Config())
-    ->setFinder($finder)
-    ->withPHPUnitRules()
-;
-```
-
-## Contributing
-
-Thank you for your interest in PHP Code Standards. Here are some of the many ways to contribute.
-
-- Check out our [contributing guide](/.github/CONTRIBUTING.md)
-- Look at our [code of conduct](/.github/CODE_OF_CONDUCT.md)
-
-## Security
-
-If you discover any security related issues, please email security@hypefactors.com instead of using the issue tracker.
 
 ## License
 
