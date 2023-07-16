@@ -40,7 +40,7 @@ class HypefactorsRectorConfig
         $rectorConfig->rule(RemoveUselessReturnTagRector::class);
         $rectorConfig->rule(RemoveNonExistingVarAnnotationRector::class);
 
-        $rectorConfig->rule(ArraySpreadInsteadOfArrayMergeRector::class);
+        // $rectorConfig->rule(ArraySpreadInsteadOfArrayMergeRector::class);
 
         $rectorConfig->rule(ClassPropertyAssignToConstructorPromotionRector::class);
 
