@@ -22,6 +22,7 @@ class GenerateCommand extends BaseCommand
         $files = [
             'ecs.php'      => __DIR__ . '/../stubs/ecs.php.stub',
             'phpstan.neon' => __DIR__ . '/../stubs/phpstan.neon.stub',
+            'rector.php'   => __DIR__ . '/../stubs/rector.php.stub',
         ];
 
         $output->writeln(
