@@ -23,7 +23,7 @@ class HypefactorsRectorConfig
     public static function setup(RectorConfig $rectorConfig): void
     {
         $rectorConfig->bootstrapFiles([
-            getcwd() . '/vendor/nunomaduro/larastan/bootstrap.php',
+            getcwd() . '/vendor/larastan/larastan/bootstrap.php',
         ]);
 
         $rectorConfig->phpstanConfig(getcwd() . '/phpstan.neon');

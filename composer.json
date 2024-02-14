@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.2",
         "composer-plugin-api": "^2.1",
-        "nunomaduro/larastan": "^2.6",
+        "larastan/larastan": "^2.9",
         "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-mockery": "^1.1",
         "rector/rector": "^1.0",

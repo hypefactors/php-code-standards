@@ -1,6 +1,6 @@
 includes:
     - ./phpstan.neon
-    - ./../../nunomaduro/larastan/extension.neon
+    - ./../../larastan/larastan/extension.neon
 
 parameters:
     checkMissingIterableValueType: false
